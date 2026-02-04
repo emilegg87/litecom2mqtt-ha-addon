@@ -1,9 +1,3 @@
-########################################################
-# Litecom2MQTT Home Assistant Add-on Dockerfile
-# Fullständig, ready-to-run
-########################################################
-
-# Bygg från Home Assistant base image
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
@@ -19,18 +13,18 @@ RUN apk add --no-cache \
     curl \
     git
 
-# Skapa arbetsmapp
+# Arbetsmapp
 WORKDIR /app
 
-# Skapa och aktivera virtuell miljö
+# Virtuell miljö
 RUN python3 -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
-# Uppgradera pip inuti venv
+# Uppgradera pip i venv
 RUN pip install --upgrade pip
 
-# Installera Litecom2MQTT i venv
-RUN pip install --no-cache-dir litecom2mqtt
+# Installera Litecom2MQTT direkt från GitHub
+RUN pip install --no-cache-dir git+https://github.com/swissmanu/litecom2mqtt.git
 
-# Ange standard-kommando när add-on startar
+# Startkommando
 CMD ["litecom2mqtt"]
