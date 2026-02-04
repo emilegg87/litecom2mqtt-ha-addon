@@ -12,4 +12,5 @@ Kör community-projektet `litecom2mqtt` som brygga mellan Zumtobel LITECOM och M
 - `LITECOM2MQTT_MQTT_BROKER_HOST` – din MQTT broker (Mosquitto).
 - `LITECOM2MQTT_LITECOM_HOST` – IP till LITECOM CCD.
 - `LITECOM2MQTT_LITECOM_CONSUMER_API_KEY` – API‑nyckel från LITECOM (REST API & MQTT → Consumers).
+- 
 
