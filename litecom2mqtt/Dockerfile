@@ -12,3 +12,4 @@ RUN pip3 install --no-cache-dir litecom2mqtt
 
 # Run application
 CMD ["litecom2mqtt"]
+
