@@ -30,6 +30,4 @@
     "LITECOM2MQTT_LITECOM_QUERY_GROUPS": "true",
     "LITECOM2MQTT_LITECOM_QUERY_ROOMS": "false"
   },
-  "options": {},
-  "schema": {}
 }
