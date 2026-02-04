@@ -1,15 +1,19 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-# Install system dependencies
-RUN apk add --no-cache python3 py3-pip
+# Install dependencies
+RUN apk add --no-cache python3 py3-pip gcc musl-dev libffi-dev openssl-dev
 
-# Set workdir
+# Skapa venv och aktivera
 WORKDIR /app
+RUN python3 -m venv /app/venv
+ENV PATH="/app/venv/bin:$PATH"
 
-# Install litecom2mqtt
-RUN pip3 install --no-cache-dir litecom2mqtt
+# Upgrade pip i venv
+RUN pip install --upgrade pip
 
-# Run application
+# Install litecom2mqtt i venv
+RUN pip install --no-cache-dir litecom2mqtt
+
+# Kör programmet
 CMD ["litecom2mqtt"]
-
