@@ -1,33 +1,39 @@
 {
   "name": "Litecom2MQTT",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "slug": "litecom2mqtt",
   "description": "Bridge Zumtobel Litecom CCD to MQTT with Home Assistant discovery.",
-  "url": "https://github.com/swissmanu/litecom2mqtt",
+  "arch": ["amd64"],
   "startup": "services",
   "boot": "auto",
-  "arch": [
-    "aarch64",
-    "amd64",
-    "armv7",
-    "armhf",
-    "i386"
-  ],
-  "host_network": true,
-  "ingress": false,
-  "panel_icon": "mdi:lightbulb-group",
-  "environment": {
-    "LITECOM2MQTT_MQTT_BROKER_HOST": "192.168.1.250",
-    "LITECOM2MQTT_MQTT_BROKER_PORT": "8883",
-    "LITECOM2MQTT_MQTT_BROKER_PROTOCOL": "mqtt",
-    "LITECOM2MQTT_MQTT_TOPIC_PREFIX": "litecom",
-    "LITECOM2MQTT_LOG_LEVEL": "INFO",
-    "LITECOM2MQTT_LITECOM_HOST": "192.168.1.254",
-    "LITECOM2MQTT_LITECOM_CONSUMER_NAME": "hamqtt",
-    "LITECOM2MQTT_LITECOM_CONSUMER_API_KEY": "k1tnqUYsADmXx6q467SRHOWVZetzWjoLvBNO7pXGjoI=",
-    "LITECOM2MQTT_LITECOM_STATE_MQTT_TOPIC_PREFIX": "zones",
-    "LITECOM2MQTT_LITECOM_QUERY_DEVICES": "true",
-    "LITECOM2MQTT_LITECOM_QUERY_GROUPS": "true",
-    "LITECOM2MQTT_LITECOM_QUERY_ROOMS": "false"
-  }
-} 
+  "options": {
+    "mqtt_host": "192.168.1.254",
+    "mqtt_port": 8883,
+    "mqtt_username": "hamqtt",
+    "mqtt_password": "k1tnqUYsADmXx6q467SRHOWVZetzWjoLvBNO7pXGjoI=",
+    "mqtt_tls": true,
+    "mqtt_validate_cert": false,
+    "litecom_ip": "192.168.1.100",
+    "litecom_port": 3000
+  },
+  "schema": {
+    "mqtt_host": "str",
+    "mqtt_port": "int",
+    "mqtt_username": "str",
+    "mqtt_password": "str",
+    "mqtt_tls": "bool",
+    "mqtt_validate_cert": "bool",
+    "litecom_ip": "str",
+    "litecom_port": "int"
+  },
+  "map": [
+    ["mqtt_host", "MQTT Host"],
+    ["mqtt_port", "MQTT Port"],
+    ["mqtt_username", "MQTT Username"],
+    ["mqtt_password", "MQTT Password"],
+    ["mqtt_tls", "Use TLS / Encryption"],
+    ["mqtt_validate_cert", "Validate Certificate"],
+    ["litecom_ip", "Litecom Controller IP"],
+    ["litecom_port", "Litecom Controller Port"]
+  ]
+}
