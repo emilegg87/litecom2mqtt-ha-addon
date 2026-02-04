@@ -5,7 +5,7 @@
   "description": "Bridge Zumtobel Litecom CCD to MQTT with Home Assistant discovery.",
   "url": "https://github.com/swissmanu/litecom2mqtt",
   "startup": "services",
-  "boot": "true",
+  "boot": "auto",
   "arch": [
     "aarch64",
     "amd64",
