@@ -1,6 +1,6 @@
 {
   "name": "Litecom2MQTT",
-  "version": "0.1.3,",
+  "version": "0.1.4,",
   "slug": "litecom2mqtt",
   "description": "Bridge Zumtobel Litecom CCD to MQTT with Home Assistant discovery.",
   "url": "https://github.com/swissmanu/litecom2mqtt",
