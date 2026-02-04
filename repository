@@ -1,6 +1,5 @@
 {
-  "name": "Olsson Emil Custom Add-ons",
-  "url": "https://example.com/olsson-emil-addons",
-  "maintainer": "Olsson Emil",
-  "source": "local"
+  "name": "Litecom2MQTT Add-on Repository",
+  "url": "https://github.com/emilegg87/litecom2mqtt-ha-addon",
+  "maintainer": "emilegg87"
 }
