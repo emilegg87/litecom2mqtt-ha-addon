@@ -1,39 +1,48 @@
 {
   "name": "Litecom2MQTT",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "slug": "litecom2mqtt",
   "description": "Bridge Zumtobel Litecom CCD to MQTT with Home Assistant discovery.",
-  "arch": ["amd64"],
+  "image": "ghcr.io/swissmanu/litecom2mqtt/litecom2mqtt:latest",
   "startup": "services",
   "boot": "auto",
+  "ingress": false,
+  "host_network": true,
+  "arch": ["amd64", "aarch64"],
   "options": {
     "mqtt_host": "192.168.1.254",
     "mqtt_port": 8883,
+    "mqtt_protocol": "mqtts",
     "mqtt_username": "hamqtt",
-    "mqtt_password": "k1tnqUYsADmXx6q467SRHOWVZetzWjoLvBNO7pXGjoI=",
-    "mqtt_tls": true,
-    "mqtt_validate_cert": false,
-    "litecom_ip": "192.168.1.100",
-    "litecom_port": 3000
+    "mqtt_password": "",
+    "litecom_host": "192.168.1.X",
+    "litecom_consumer_name": "homeassistant",
+    "litecom_consumer_api_key": "",
+    "mqtt_topic_prefix": "litecom2mqtt",
+    "log_level": "INFO",
+    "tls_insecure": true
   },
   "schema": {
     "mqtt_host": "str",
     "mqtt_port": "int",
-    "mqtt_username": "str",
-    "mqtt_password": "str",
-    "mqtt_tls": "bool",
-    "mqtt_validate_cert": "bool",
-    "litecom_ip": "str",
-    "litecom_port": "int"
+    "mqtt_protocol": "list(mqtt|mqtts)",
+    "mqtt_username": "str?",
+    "mqtt_password": "str?",
+    "litecom_host": "str",
+    "litecom_consumer_name": "str",
+    "litecom_consumer_api_key": "str",
+    "mqtt_topic_prefix": "str?",
+    "log_level": "list(DEBUG|INFO|WARNING|ERROR|CRITICAL)?",
+    "tls_insecure": "bool?"
   },
-  "map": [
-    ["mqtt_host", "MQTT Host"],
-    ["mqtt_port", "MQTT Port"],
-    ["mqtt_username", "MQTT Username"],
-    ["mqtt_password", "MQTT Password"],
-    ["mqtt_tls", "Use TLS / Encryption"],
-    ["mqtt_validate_cert", "Validate Certificate"],
-    ["litecom_ip", "Litecom Controller IP"],
-    ["litecom_port", "Litecom Controller Port"]
-  ]
+  "environment": {
+    "LITECOM2MQTT_MQTT_BROKER_HOST": "{options.mqtt_host}",
+    "LITECOM2MQTT_MQTT_BROKER_PORT": "{options.mqtt_port}",
+    "LITECOM2MQTT_MQTT_BROKER_PROTOCOL": "{options.mqtt_protocol}",
+    "LITECOM2MQTT_LITECOM_HOST": "{options.litecom_host}",
+    "LITECOM2MQTT_LITECOM_CONSUMER_NAME": "{options.litecom_consumer_name}",
+    "LITECOM2MQTT_LITECOM_CONSUMER_API_KEY": "{options.litecom_consumer_api_key}",
+    "LITECOM2MQTT_MQTT_TOPIC_PREFIX": "{options.mqtt_topic_prefix}",
+    "LITECOM2MQTT_LOG_LEVEL": "{options.log_level}"
+  }
 }
