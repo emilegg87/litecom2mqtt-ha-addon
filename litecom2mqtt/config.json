@@ -3,7 +3,7 @@
   "slug": "litecom2mqtt",
   "version": "1.0.4",
   "description": "Bridge Zumtobel Litecom CCD to MQTT with Home Assistant discovery.",
-  "image": "ghcr.io/swissmanu/litecom2mqtt/litecom2mqtt",
+  "image": "ghcr.io/swissmanu/litecom2mqtt/litecom2mqtt:1.0.4",
   "startup": "services",
   "boot": "auto",
   "init": false,
