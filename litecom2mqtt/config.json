@@ -1,7 +1,7 @@
 {
   "name": "Litecom2MQTT",
-  "version": "0.1.12",
   "slug": "litecom2mqtt",
+  "version": "0.1.12",
   "description": "Bridge Zumtobel Litecom CCD to MQTT with Home Assistant discovery.",
   "image": "ghcr.io/swissmanu/litecom2mqtt/litecom2mqtt:latest",
   "startup": "services",
@@ -15,7 +15,7 @@
     "mqtt_protocol": "mqtts",
     "mqtt_username": "hamqtt",
     "mqtt_password": "",
-    "litecom_host": "192.168.1.X",
+    "litecom_host": "192.168.1.XX",
     "litecom_consumer_name": "homeassistant",
     "litecom_consumer_api_key": "",
     "mqtt_topic_prefix": "litecom2mqtt",
@@ -46,3 +46,4 @@
     "LITECOM2MQTT_LOG_LEVEL": "{options.log_level}"
   }
 }
+``
