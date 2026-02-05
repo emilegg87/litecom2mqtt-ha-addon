@@ -12,9 +12,9 @@
   "arch": ["amd64", "aarch64"],
 
   "options": {
-    "mqtt_host": "192.168.1.250",
-    "mqtt_port": 8883,
-    "mqtt_protocol": "mqtts",
+    "mqtt_broker_host": "192.168.1.250",
+    "mqtt_broker_port": "8883",
+    "mqtt_broker_protocol": "mqtts",
     "mqtt_username": "hamqtt",
     "mqtt_password": "Harryton123!",
     "mqtt_topic_prefix": "litecom2mqtt",
@@ -25,9 +25,9 @@
   },
 
   "schema": {
-    "mqtt_host": "str",
-    "mqtt_port": "int",
-    "mqtt_protocol": "list(mqtt|mqtts)",
+    "mqtt_broker_host": "str",
+    "mqtt_broker_port": "str",
+    "mqtt_broker_protocol": "list(mqtt|mqtts)",
     "mqtt_username": "str",
     "mqtt_password": "password",
     "mqtt_topic_prefix": "str",
